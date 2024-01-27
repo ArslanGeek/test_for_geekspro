@@ -39,8 +39,7 @@ def task_list_detail_view(request, id):
     if request.method == 'PUT':
         task_list_detail.title = request.data.get('title')
         task_list_detail.description = request.data.get('description')
-        task_list_detail.price = request.data.get('price')
-        task_list_detail.category_id = request.data.get('category_id')
+        task_list_detail.completed = request.data.get('completed')
         task_list_detail.save()
 
         return Response(data={'car_list_detail_id': task_list_detail.id},
